@@ -1,6 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
+import { configProvider } from './app-config/config.provider';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -8,6 +9,9 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      providers: [
+        configProvider
+      ]
     }).compileComponents();
   }));
 
@@ -27,6 +31,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('app works!');
+    expect(compiled.querySelector('h1').textContent).toContain('This is:');
   }));
 });

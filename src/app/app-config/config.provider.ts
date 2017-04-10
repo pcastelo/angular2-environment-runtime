@@ -2,8 +2,7 @@ import { DevConfig } from './dev-config';
 import { UatConfig } from './uat-config';
 import { Config } from './config';
 
-// why export? encounter this error: Reference to a local (non-exported) symbol
-export const configFactory = () => {
+export function configFactory() {
   const hostname = window.location.hostname;
   switch (hostname) {
     case'127.0.0.1':
